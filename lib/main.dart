@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:fluttercourse/blocs/count_bloc.dart';
-import 'package:fluttercourse/pages/counterPage.dart';
-import 'package:provider/provider.dart';
-
-void main() => runApp(MyApp());
+import 'package:fluttercourse/pages/homePage.dart';
+ void main() {
+  runApp(const MyApp());
+ }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<CountBloc>(
-      create: (context) => CountBloc(),
-      child: MaterialApp(
-        home: CounterPage(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-    );
+      home: Homepage(),
+     );
   }
 }
